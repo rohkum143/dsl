@@ -10,7 +10,7 @@ def call(body)
                stage("Code Compile") {
                   echo "checkout"
                   //git 'https://github.com/shekharshamra/jenkin.git'
-                 checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/shekharshamra/jenkin.git']]]
+                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '584a0859-1779-452d-9d39-4b71bb076333', url: 'https://rkumar164@stash.lblw.ca/scm/sdm/emerald.git']]])
 
                 }
             }
