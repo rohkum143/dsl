@@ -5,7 +5,7 @@ def call(body)
       body.resolveStrategy = Closure.DELEGATE_FIRST
       body.delegate = config
       body()
-       timestamps {
+       // timestamps {
           try {
                stage("Code Compile") {
                   echo "checkout"
@@ -19,6 +19,6 @@ def call(body)
           catch (Exception caughtExp) {
              print "[ERROR]: Cargill Brazill CFData pipeline failed, check detailed logs..."
           }
-        }            
+       // }            
      
   }
