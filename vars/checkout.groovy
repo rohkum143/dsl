@@ -9,7 +9,7 @@ def call(body)
           try {
                stage("Code Compile") {
                   echo "checkout"
-                  checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/shekharshamra/jenkin.git']]])
+                  git 'https://github.com/shekharshamra/jenkin.git'
                 }
             }
         
