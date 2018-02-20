@@ -1,6 +1,6 @@
 #!groovy
 
-import com.test.*
+import com.test.devops.scm*
   
 def call(body)
   {
