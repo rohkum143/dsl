@@ -1,4 +1,4 @@
-
+#!groovy
 def call(body)
   {
     def config = [:]
