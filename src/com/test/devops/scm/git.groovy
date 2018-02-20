@@ -6,6 +6,7 @@ def CheckOut() {
           }
       catch (Exception caughtExp) {
             print " pipeline failed, check detailed log"
+            currentBuild.result="FAILURE"
       }
 }
 
