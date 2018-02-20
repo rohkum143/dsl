@@ -1,4 +1,4 @@
-package.com.test
+package.com.test.devops.scm
 def CheckOut() {
       try {
             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/shekharshamra/jenkin.git']]])
