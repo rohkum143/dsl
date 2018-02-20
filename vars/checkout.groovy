@@ -21,7 +21,7 @@ def call(body)
         
           catch (Exception caughtExp) {
              print "[ERROR]: Cargill Brazill CFData pipeline failed, check detailed logs..."
-            current.Buildresult="FAILURE"
+            currentBuild.result="FAILURE"
           }
        // }            
      
