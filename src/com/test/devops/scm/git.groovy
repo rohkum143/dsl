@@ -13,7 +13,7 @@ def CodeCompile() {
       try {
             if (isUnix()) {
                   echo "'${env.mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install -f ${env.Target_DIR}/pom.xml"
-                //  sh "'mvn' -Dmaven.test.failure.ignore clean install -f ${env.Target_DIR}/pom.xml"
+             sh "'mvn' -Dmaven.test.failure.ignore clean install -f ${env.Target_DIR}/pom.xml"
              } else {
              bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean install/)
              }
