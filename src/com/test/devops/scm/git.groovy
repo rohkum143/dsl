@@ -9,11 +9,11 @@ def CheckOut(String GIT_URL) {
             currentBuild.result="FAILURE"
       }
 } 
-def CodeCompile() {
+def CodeCompile(String M2) {
       try {
             if (isUnix()) {
-                  echo "'${env.mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install -f ${env.Target_DIR}/pom.xml"
-             sh "'mvn' -Dmaven.test.failure.ignore clean install -f ${env.Target_DIR}/pom.xml"
+                  echo "'${M2}/bin/mvn' -Dmaven.test.failure.ignore clean install -f ${env.Target_DIR}/pom.xml"
+             sh "'${M2}/bin/mvn' -Dmaven.test.failure.ignore clean install -f ${env.Target_DIR}/pom.xml"
              } else {
              bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean install/)
              }
