@@ -19,11 +19,8 @@ def call(body)
                }
                 stage("Code Compile") {
                   echo "Code Compile"
-                  if (isUnix()) {
-                   sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
-                    } else {
-                 bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean install/)
-                       }
+                  def g = new git ()
+                  g.CodeCompile
                  }
               }
         
