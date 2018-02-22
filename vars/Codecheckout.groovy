@@ -21,9 +21,7 @@ def call(body)
                   dir ("${env.Target_DIR}") {
                   echo "Code Compile"
                   def g = new git ()
-                  def mvnHome
-                  mvnHome = tool 'M2'
-                    g.CodeCompile("${config.mvnHome}")
+                  g.CodeCompile("${config.mvnHome}")
                  }
                 }
           }
