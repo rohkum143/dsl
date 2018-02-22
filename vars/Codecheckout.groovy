@@ -8,21 +8,29 @@ def call(body)
       body.resolveStrategy = Closure.DELEGATE_FIRST
       body.delegate = config
       body()
-       // timestamps {
+      def mvnHome
+      mvnHome = tool 'M2_HOME'
+       timestamps {
           try {
                stage("Code Checkout") {
                   echo "checkout"
-                  //git 'https://github.com/shekharshamra/jenkin.git'
-                  // checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/shekharshamra/jenkin.git']]])
-                def g = new git()
-                 g.CheckOut("${config.GIT_URL}")
+                  def g = new git()
+                   g.CheckOut("${config.GIT_URL}")
                }
-            }
+                stage("Code Compile") {
+                  echo "Code Compile"
+                  if (isUnix()) {
+                   sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
+                    } else {
+                 bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean install/)
+                       }
+                 }
+              }
         
           catch (Exception caughtExp) {
              print "pipeline failed, check detailed logs..."
             currentBuild.result="FAILURE"
           }
-       // }            
+        }            
      
   }
