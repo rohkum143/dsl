@@ -17,10 +17,10 @@ def CodeCompile() {
              sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
              } else {
              bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean install/)
-                 }
+             }
       }
        catch (Exception caughtExp) {
-        print " pipeline failed, check detailed log" + caughtExp.getMessage()
+        print " codecomplie fail, check detailed log" + caughtExp.getMessage()
          currentBuild.result="FAILURE
        }
       
