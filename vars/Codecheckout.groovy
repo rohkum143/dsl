@@ -10,7 +10,7 @@ def call(body)
       body()
        // timestamps {
           try {
-               stage("Code Compile") {
+               stage("Code Checkout") {
                   echo "checkout"
                   //git 'https://github.com/shekharshamra/jenkin.git'
                   // checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/shekharshamra/jenkin.git']]])
