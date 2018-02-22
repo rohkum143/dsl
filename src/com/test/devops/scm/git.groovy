@@ -11,16 +11,11 @@ def CheckOut(String GIT_URL) {
 } 
 def CodeCompile() {
       try {
-             if (isUnix()) {
-             echo "${env.mvnHome}"
-             sh "'${env.mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install -f ${env.Target_DIR}/pom.xml"
-             } else {
-             bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean install/)
-             }
-      }
+           sh "'${env.mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
+          }
        catch (Exception caughtExp) {
-        print " codecomplie fail, check detailed log" + caughtExp.getMessage()
-         currentBuild.result="FAILURE"
+         print " codecomplie fail, check detailed log" + caughtExp.getMessage()
+            currentBuild.result="FAILURE"
        }
       
 } 
