@@ -23,7 +23,7 @@ def call(body)
                   def g = new git ()
                   def mvnHome
                   mvnHome = tool 'M2'
-                    g.CodeCompile("{config.mvnHome}")
+                    g.CodeCompile("${config.mvnHome}")
                  }
                 }
           }
