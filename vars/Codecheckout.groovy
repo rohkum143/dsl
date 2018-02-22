@@ -11,9 +11,13 @@ def call(body)
       timestamps {
           try {
                stage("Code Checkout") {
-                  echo "checkout"
-                  def g = new git()
-                 g.CheckOut("${config.GIT_URL},${config.TARGET_DIR}")
+                 dir (${config.TARGET_DIR}) {
+                   
+                     echo "checkout"
+                     def g = new git()
+                      g.CheckOut("${config.GIT_URL}")
+                   
+                 }
                }
                 stage("Code Compile") {
                   echo "Code Compile"
