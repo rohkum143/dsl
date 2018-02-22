@@ -21,7 +21,7 @@ def CodeCompile() {
       }
        catch (Exception caughtExp) {
         print " codecomplie fail, check detailed log" + caughtExp.getMessage()
-         currentBuild.result="FAILURE
+         currentBuild.result="FAILURE"
        }
       
 } 
