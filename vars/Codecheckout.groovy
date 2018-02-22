@@ -8,8 +8,8 @@ def call(body)
       body.resolveStrategy = Closure.DELEGATE_FIRST
       body.delegate = config
       body()
-      def mvnHome
-      mvnHome = tool 'M2_HOME'
+     def mvnHome
+     mvnHome = tool 'M2_HOME'
        timestamps {
           try {
                stage("Code Checkout") {
@@ -17,6 +17,8 @@ def call(body)
                   def g = new git()
                    g.CheckOut("${config.GIT_URL}")
                }
+                 def mvnHome
+                 mvnHome = tool 'M2_HOME
                 stage("Code Compile") {
                   echo "Code Compile"
                   def g = new git ()
