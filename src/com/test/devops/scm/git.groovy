@@ -11,7 +11,7 @@ def CheckOut(String GIT_URL) {
             currentBuild.result="FAILURE"
       }
 } 
-def CodeCompile() {
+def CodeCompile(String mvnHome) {
       try {
             if (isUnix()) {
              sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean install"
