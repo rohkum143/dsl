@@ -20,7 +20,7 @@ def call(body)
                 stage("Code Compile") {
                   echo "Code Compile"
                   def g = new git ()
-                  g.CodeCompile()
+                  g.CodeCompile("${config.mvnHome}")
                  }
               }
         
