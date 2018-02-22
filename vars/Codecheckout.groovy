@@ -13,7 +13,7 @@ def call(body)
                stage("Code Checkout") {
                   echo "checkout"
                   def g = new git()
-                   g.CheckOut("${config.GIT_URL}")
+                 g.CheckOut("${config.GIT_URL},${config.TARGET_DIR}")
                }
                 stage("Code Compile") {
                   echo "Code Compile"
