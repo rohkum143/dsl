@@ -20,11 +20,13 @@ def call(body)
                  }
                }
                 stage("Code Compile") {
+                  dir ("${env.Target_DIR}") {
                   echo "Code Compile"
                   def g = new git ()
                   g.CodeCompile("${config.mvnHome}")
                  }
-              }
+                }
+          }
         
           catch (Exception caughtExp) {
              print "pipeline failed, check detailed logs..."
