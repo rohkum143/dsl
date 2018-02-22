@@ -15,8 +15,6 @@ def call(body)
                   def g = new git()
                    g.CheckOut("${config.GIT_URL}")
                }
-                 def mvnHome
-                 mvnHome = tool 'M2_HOME'
                 stage("Code Compile") {
                   echo "Code Compile"
                   def g = new git ()
