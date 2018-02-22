@@ -8,9 +8,7 @@ def call(body)
       body.resolveStrategy = Closure.DELEGATE_FIRST
       body.delegate = config
       body()
-     def mvnHome
-     mvnHome = tool 'M2_HOME'
-       timestamps {
+      timestamps {
           try {
                stage("Code Checkout") {
                   echo "checkout"
