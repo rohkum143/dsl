@@ -12,13 +12,11 @@ def call(body)
           try {
                stage("Code Checkout") {
                  dir ("${env.Target_DIR}") {
-                   
                      echo "checkout"
                      def g = new git()
                       g.CheckOut("${config.GIT_URL}")
-                   
-                 }
-               }
+                      }
+                }
                 stage("Code Compile") {
                   dir ("${env.Target_DIR}") {
                   echo "Code Compile"
