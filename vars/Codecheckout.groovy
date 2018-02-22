@@ -11,7 +11,7 @@ def call(body)
       timestamps {
           try {
                stage("Code Checkout") {
-                 dir ("${config.TARGET_DIR}") {
+                 dir ("${env.Target_DIR}") {
                    
                      echo "checkout"
                      def g = new git()
