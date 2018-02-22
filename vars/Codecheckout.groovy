@@ -22,8 +22,8 @@ def call(body)
                   echo "Code Compile"
                   def g = new git ()
                   def mvnHome
-                  mvnHome = tool 'M2_HOME'
-                  g.CodeCompile()
+                  mvnHome = tool 'M2'
+                    g.CodeCompile("{config.M2}")
                  }
                 }
           }
