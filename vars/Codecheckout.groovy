@@ -21,11 +21,17 @@ def call(body)
                   dir ("${env.Target_DIR}") {
                   echo "Code Compile"
                   def g = new git ()
-                   def mvnHome
-                   mvnHome = tool 'M2'
                   g.CodeCompile()
                  }
                 }
+             stage ("Junit Test") {
+                 dir ("${env.Target_DIR}") {
+                 echo "Junit Testing "
+                 def g = new git ()
+                 g.Junit()
+                 }
+             }
+              
           }
                 
           catch (Exception caughtExp) {
