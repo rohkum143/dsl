@@ -17,6 +17,15 @@ def CodeCompile() {
          print " codecomplie fail, check detailed log" + caughtExp.getMessage()
             currentBuild.result="FAILURE"
        }
-      
-} 
+  }
+def Junit() {
+      try {
+           junit 'in28minutes-core/target/surefire-reports/*.xml'
+         }
+      catch (Exception caughtExp) {
+        print " codecomplie fail, check detailed log" + caughtExp.getMessage()
+            currentBuild.result="FAILURE"
+       }
+}     
+           
 
