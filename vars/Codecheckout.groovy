@@ -15,7 +15,7 @@ def call(body)
                      echo "checkout"
                      def g = new git()
                       g.CheckOut("${config.GIT_URL}")
-                      echo "${config.MY_COMMAND}"
+                      // echo "${config.MY_COMMAND}"
                       }
                 }
                 stage("Code Compile") {
