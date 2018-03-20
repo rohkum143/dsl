@@ -13,6 +13,7 @@ def call(body)
             wrap([$class: 'AnsiColorBuildWrapper']) {
                stage("Code Checkout") {
                  dir ("${env.Target_DIR}") {
+                     deleteDir()
                      echo "checkout"
                      def g = new git()
                       g.CheckOut("${config.GIT_URL}")
