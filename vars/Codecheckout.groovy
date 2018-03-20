@@ -35,7 +35,7 @@ def call(body)
              }
               
           }
-                
+          }     
           catch (Exception caughtExp) {
              print "pipeline failed, check detailed logs..."
             currentBuild.result="FAILURE"
@@ -43,4 +43,4 @@ def call(body)
         }            
      
   }
-  }
+  
