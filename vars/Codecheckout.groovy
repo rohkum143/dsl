@@ -10,6 +10,7 @@ def call(body)
       body()
       timestamps {
           try {
+            wrap([$class: 'AnsiColorBuildWrapper']) {
                stage("Code Checkout") {
                  dir ("${env.Target_DIR}") {
                      echo "checkout"
@@ -41,4 +42,5 @@ def call(body)
           }
         }            
      
+  }
   }
