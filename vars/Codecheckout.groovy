@@ -11,6 +11,7 @@ def call(body)
       timestamps {
           try {
             wrap([$class: 'AnsiColorBuildWrapper']) {
+              currentBuild.result = "SUCCESS"
                stage("Code Checkout") {
                  dir ("${env.Target_DIR}") {
                      deleteDir()
