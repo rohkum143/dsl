@@ -20,8 +20,16 @@ def CodeCompile() {
   }
 def Junit() {
       try {
-            stage("Junittest") {            
-              junit 'in28minutes-core/target/surefire-reports/*.xml'
+            stage("Junittest") {  
+               parallel(
+                   "First-Test" : {
+                      junit 'in28minutes-core/target/surefire-reports/*.xml'
+                      },
+                     "2nd-Test" : {
+                      echo " This test for parallel stage"
+                     },
+                 failFast: true
+                )
             }
          }
       catch (Exception caughtExp) {
