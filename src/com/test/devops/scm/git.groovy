@@ -20,12 +20,12 @@ def CodeCompile() {
   }
 def Junit() {
       try {
-            stage( Juunit testing ){
-           junit 'in28minutes-core/target/surefire-reports/*.xml'
+            stage(Juunit testing){
+              junit 'in28minutes-core/target/surefire-reports/*.xml'
          }
       }
       catch (Exception caughtExp) {
-        print " codecomplie fail, check detailed log" + caughtExp.getMessage()
+          print " codecomplie fail, check detailed log" + caughtExp.getMessage()
             currentBuild.result="FAILURE"
        }
 }     
