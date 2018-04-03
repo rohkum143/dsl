@@ -16,10 +16,10 @@ def call(body)
                  dir ("${env.Target_DIR}") {
                      deleteDir()
                      echo "checkout"
-                     def userInput = ""
+                     // def userInput = ""
                      try {
-                     timeout(time: 10, unit: 'SECONDS') {
-                   userInput = input(id: 'User Inputs Required', message: 'User Inputs Required', parameters: [[$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Do you want to raise pull request?', name: 'Raise_PR']])
+                     // timeout(time: 10, unit: 'SECONDS') {
+                   // userInput = input(id: 'User Inputs Required', message: 'User Inputs Required', parameters: [[$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Do you want to raise pull request?', name: 'Raise_PR']])
                   }
                  }
             catch(Exception caughtError) {
