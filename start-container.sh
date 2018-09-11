@@ -28,9 +28,9 @@ docker run -d -t --dns 127.0.0.1 -P --name hive-mysql -h mysql.bdp.com -w /root 
 i=1
 while [ $i -lt $N ]
 do
-	sudo docker rm -f slave$i &> /dev/null
+	docker rm -f slave$i &> /dev/null
 	echo "start slave$i container..."
-	sudo docker run -d -v $PWD:/opt -t --dns 127.0.0.1 -P --name slave$i -h slave$i.bdp.com -e JOIN_IP=$FIRST_IP rohtashkumar/hadoop-slave &> /dev/null
+	docker run -d -v $PWD:/opt -t --dns 127.0.0.1 -P --name slave$i -h slave$i.bdp.com -e JOIN_IP=$FIRST_IP rohtashkumar/hadoop-slave &> /dev/null
 	((i++))
 done
 
