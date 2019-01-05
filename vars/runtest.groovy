@@ -2,7 +2,7 @@
 
 import com.test.devops.scm.*
 
-def call(Map Declare) {
+def call() {
 
     //def archType = deciders.archType
     //String requestJson = readFile("test.json")
