@@ -11,4 +11,16 @@ def call() {
     def a = [ 1,2,3 ]
     println a 
     
+    def propJavaOptions = [:]
+    def configFile = 'test.yaml'
+    def props
+
+
+    if (! fileExists(configFile)) {
+        error "Missing configFile"
+    } else {
+      props = readYaml file: configFile
+        println "${props}"
+    }
+    
     }
