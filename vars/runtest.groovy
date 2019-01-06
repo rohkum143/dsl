@@ -18,5 +18,13 @@ def call() {
     }
     if (props?.services) {
       echo " required configuration"
+    dockerprperties = props.docker
+    def javaOptionString = ''
+    javaOptionString = '-Ddocker.projectVersion='+env.BUILD_NUMBER+' '
+    for (def entry: dockerprperties){
+    javaOptionString = javaOptionString + "${entry} "
+    println javaOptionString
+  }
+    
   }
   }
