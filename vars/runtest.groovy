@@ -16,7 +16,7 @@ def call() {
      props = readYaml file: configFile
        println props
     }
-    if (!props?.services) {
-      error "Missing sonar configuration"
+    if (props?.services) {
+      echo " required configuration"
   }
   }
