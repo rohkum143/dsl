@@ -26,5 +26,5 @@ def call() {
     println javaOptionString
   }
     
-  }
-  }
+ }
+}
