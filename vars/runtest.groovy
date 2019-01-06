@@ -20,7 +20,7 @@ def call() {
         error "Missing configFile"
     } else {
       props = readYaml file: configFile
-        println "${props}"
+       // println "${props}"
     }
     
     }
